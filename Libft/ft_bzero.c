@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 02:32:46 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/02 02:32:46 by oibis            ###   ########.fr       */
+/*   Created: 2022/02/02 02:34:12 by oibis             #+#    #+#             */
+/*   Updated: 2022/02/02 02:34:12 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-
-size_t  ft_strlen(char *str)
+void    ft_bzero(void *dest, size_t len)
 {
-    char *s;
+    size_t  i;
+    char    *ptr;
 
-    s = str;
+    i=0;
+    ptr = (char *)dest;
 
-    while (*(s++) != 0);
-
-    return (s - str);  
+    while (i < len)
+        ptr[i++] = 0;
 }
