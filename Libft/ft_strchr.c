@@ -27,13 +27,13 @@
 */
 #include "libft.h"
 
-char    *ft_strchr(const char *ptr, int c)
+char	*ft_strchr(const char *ptr, int c)
 {
-    char *p;
+	char *p;
 
-    p = ptr;
-    while (*p++)
-        if (*p == (char)c)
-            return (p);
-    return (0);
+	p = ptr;
+	while (*p++)
+		if (*p == (char)c)
+			return (p);
+	return (0);
 }

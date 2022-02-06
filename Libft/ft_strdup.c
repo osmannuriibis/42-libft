@@ -10,13 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 /*
-** LIBRARY: <string.h>
-** SYNOPSIS: save a copy of a string (with malloc)
-**
-** DESCRIPTION:
-** 		The strdup() function allocates sufficient memory for a copy of the
-**	string s1, does the copy, and returns a pointer to it.  The pointer may
-**	subsequently be used as an argument to the function free(3).
+Bu işlev boş karakter sonlandırmalı s dizgesini yeni bir bellek alanına kopyalar. 
+Yeni dizge için yer ayırma işlemi malloc ile yapılır. 
+malloc yeni dizge için yer ayıramazsa işlev boş gösterici ile döner, 
+aksi takdirde yeni dizge için bir gösterici ile döner.
 */
 
 #include "libft.h"

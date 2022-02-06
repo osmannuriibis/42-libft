@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 18:34:00 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/03 18:34:00 by oibis            ###   ########.fr       */
+/*   Created: 2022/02/07 01:00:45 by oibis             #+#    #+#             */
+/*   Updated: 2022/02/07 01:00:45 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* ‘s’ string çıktısını sonunda new line karakteri ile
+birlikte verilen file descriptora yazar.
+ */
 #include "libft.h"
 
-int	ft_tolower(int c)
+void ft_putendl_fd(char *s, int fd)
 {
-	if(c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+    if (!s)
+    {
+        ft_putstr_fd(s, fd);
+        ft_putchar_fd('\n', fd);
+    }
 }

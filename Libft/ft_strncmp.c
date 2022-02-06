@@ -22,16 +22,16 @@ her iki karakter dizisinde count parametre değeri miktarınca eşleşene kadar 
 
 #include "libft.h"
 
-int strncmp(char const *str1, char const *str2, size_t count)
+int	strncmp(char const *str1, char const *str2, size_t count)
 {
-    int dif;
+	int	dif;
 
-    dif = 0;
-    while (count-- > 0)
-        if(*str1 - *str2++ != 0 || !*str1++)
-        {
-            dif = *str1 - *str2;
-            break;
-        }
-    return (dif);
+	dif = 0;
+	while (count-- > 0)
+		if(*str1 - *str2++ != 0 || !*str1++)
+		{
+			dif = *str1 - *str2;
+			break;
+		}
+	return (dif);
 }

@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 18:34:00 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/03 18:34:00 by oibis            ###   ########.fr       */
+/*   Created: 2022/02/06 00:01:34 by oibis             #+#    #+#             */
+/*   Updated: 2022/02/06 00:01:34 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if(c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
-}
+	char			*str;
+	unsigned int	i;
+
+	if (!s || !f || !(str = ft_strdup(s)))
+		return (0);
+	i = 0;
+	while (str[i])
+	{
+		str[i] = f(i, str[i]);
+		i++;
+	}
+	return (str);

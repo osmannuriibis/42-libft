@@ -42,15 +42,15 @@ static int	count_words(const char *str, char c)
 	return (i);
 }
 
-static char	*eachstr(const char *str, int start, int finish)
+static char	*eachstr(const char *s, int start, int finish)
 {
 	char	*str;
 	int		i;
 
 	i = 0;
-	str = malloc((finish - start + 1) * sizeof(char));
+	str = (char *)malloc((finish - start + 1) * sizeof(char));
 	while (start < finish)
-		str[i++] = str[start++];
+		str[i++] = s[start++];
 	str[i] = '\0';
 	return (str);
 }

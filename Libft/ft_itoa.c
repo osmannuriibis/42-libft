@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 22:30:46 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/03 22:30:46 by oibis            ###   ########.fr       */
+/*   Created: 2022/02/05 23:15:02 by oibis             #+#    #+#             */
+/*   Updated: 2022/02/05 23:15:02 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-** LIBRARY: N/A
-** SYNOPSIS: extract substring from string
-**
-** DESCRIPTION:
-** 		Allocates (with malloc(3)) and returns a substring from the string ’s’.
-**	The substring begins at index ’start’ and is of maximum size ’len’.
-*/
+
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
 	char	*str;
-	size_t	i;
-	size_t	j;
+	long	nbr;
+	size_t	size;
 
-	if (!s || !(str = (char *)malloc(len + 1)))
+	nbr = n;
+	size = n > 0 ? 0 : 1;
+	nbr = nbr > 0 ? nbr : -nbr;
+	while (n)
+	{
+		n /= 10;
+		size++;
+	}
+	if (!(str = (char *)malloc(size + 1)))
 		return (0);
-	i = start;
-	j = 0;
-	while (i < ft_strlen(s) && j < len)
-		str[j++] = s[i++];
-	str[j] = '\0';
+	*(str + size--) = '\0';
+	while (nbr > 0)
+	{
+		*(str + size--) = nbr % 10 + '0';
+		nbr /= 10;
+	}
+	if (size == 0 && str[1] == '\0')
+		*(str + size) = '0';
+	else if (size == 0 && str[1] != '\0')
+		*(str + size) = '-';
 	return (str);
 }

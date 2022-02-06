@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 18:34:00 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/03 18:34:00 by oibis            ###   ########.fr       */
+/*   Created: 2022/02/06 17:49:21 by oibis             #+#    #+#             */
+/*   Updated: 2022/02/06 17:49:21 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* 
+* Malloc kullanarak memoryden yer ayırılır ve yeni
+* element çıktı olarak verilir. Content değişkeni
+* ‘content’ parametresinin değeri ile başlatılır.
+* Next değişkeni ise NULL değeri ile başlatılmalıdır. 
+*/
 #include "libft.h"
 
-int	ft_tolower(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if(c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	t_list *new;
+
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+		return (0);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

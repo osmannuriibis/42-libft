@@ -9,12 +9,17 @@
 /*   Updated: 2022/02/03 19:11:07 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
-
 /*According to the man this function locates the first occurence of c (converted
  * to an unsigned char) in string s. ft_memchr returns a pointer to the byte
- * located, or NULL if no such byte exists within n bytes.*/
+ * located, or NULL if no such byte exists within n bytes.
+ 
+ Bu işlev blok adresinden başlayan nesnenin ilk boyut baytı içindeki ilk c 
+ (bir unsigned char'a dönüştürülmüş) baytını bulur. 
+ Dönen değer baytın konumunu içeren bir göstericidir. 
+ c baytı bulunamazsa bir boş gösterici döner.
+ 
+ */
+#include "libft.h"
 
 void    *ft_memchr(const void *s, int c, size_t n)
 {
@@ -29,5 +34,5 @@ void    *ft_memchr(const void *s, int c, size_t n)
 			return ((char *)s + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

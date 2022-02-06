@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 18:34:00 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/03 18:34:00 by oibis            ###   ########.fr       */
+/*   Created: 2022/02/06 19:54:12 by oibis             #+#    #+#             */
+/*   Updated: 2022/02/06 19:54:12 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if(c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	t_list *new_lst;
+	t_list *elem;
+
+	if (!lst)
+		return (0);
+	new_lst = 0;
+	while (lst)
+	{
+		if (!(elem = ft_lstnew(f(lst->content))))
+		{
+			ft_lstclear(&new_lst, del);
+			return (0);
+		}
+		ft_lstadd_back(&new_lst, elem);
+		lst = lst->next;
+	}
+	return (new_lst);
 }

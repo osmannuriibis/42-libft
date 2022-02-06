@@ -14,10 +14,10 @@ string s2 in the string s1, where not more than n characters are searched.
 Characters that appear after a `\0' character are not searched. */
 #include "libft.h"
 
-char    *ft_strnstr(const char *str1, const char *str2, size_t len)
+char	*ft_strnstr(const char *str1, const char *str2, size_t len)
 {
-	int				size;
-	int				i;
+	int	size;
+	int	i;
 
 	if (!*str2)
 		return ((char*)str1);
