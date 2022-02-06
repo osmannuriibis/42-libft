@@ -39,17 +39,17 @@ ft_putchar_fd.c		\
 ft_putstr_fd.c		\ 
 ft_putendl_fd.c		\ 
 ft_putnbr_fd.c		\ 
-ft_strmapi.c
+ft_strmapi.c		\
 
-BONUS = ft_lstnew_bonus.c	\ 
-ft_lstsize_bonus.c			\ 
-ft_lstlast_bonus.c			\ 
-ft_lstadd_front_bonus.c		\ 
-ft_lstadd_back_bonus.c		\ 
-ft_lstdelone_bonus.c		\ 
-ft_lstclear_bonus.c			\ 
-ft_lstiter_bonus.c			\ 
-ft_lstmap_bonus.c
+BONUS = bonus/ft_lstnew_bonus.c	\
+bonus/ft_lstsize_bonus.			\
+bonus/ft_lstlast_bonus.c		\
+bonus/ft_lstadd_front_bonus.c	\
+bonus/ft_lstadd_back_bonus.c	\
+bonus/ft_lstdelone_bonus.c		\
+bonus/ft_lstclear_bonus.c		\
+bonus/ft_lstiter_bonus.c		\
+bonus/ft_lstmap_bonus.c			\
 
 
 OBJS = ${SRCS:.c=.o}
