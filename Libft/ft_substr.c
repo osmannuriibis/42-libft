@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 22:30:46 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/03 22:30:46 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:48:52 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
 ** LIBRARY: N/A
 ** SYNOPSIS: extract substring from string
@@ -25,7 +26,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!s || !(str = (char *)malloc(len + 1)))
+	str = (char *)malloc(len + 1);
+	if (!s || !str)
 		return (0);
 	i = start;
 	j = 0;

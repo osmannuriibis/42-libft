@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 02:34:12 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/02 02:34:12 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:22:37 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void    ft_bzero(void *dest, size_t len)
+void	ft_bzero(void *dest, size_t len)
 {
-    size_t  i;
-    char    *ptr;
+	size_t	i;
+	char	*ptr;
 
-    i=0;
-    ptr = (char *)dest;
-
-    while (i < len)
-        ptr[i++] = 0;
+	i = 0;
+	ptr = (char *)dest;
+	while (i < len)
+		ptr[i++] = 0;
 }

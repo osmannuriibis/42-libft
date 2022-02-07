@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 02:32:44 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/02 02:32:44 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:26:44 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
-    return (c >= '0' || c <= '9');
+	return (c >= '0' && c <= '9');
 }

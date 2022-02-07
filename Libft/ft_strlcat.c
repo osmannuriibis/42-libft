@@ -6,9 +6,10 @@
 /*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:29:34 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/02 20:31:16 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:44:19 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
  * Appends src to string dst of size siz (unlike strncat, siz is the
  * full size of dst, not space left).  At most siz-1 characters
@@ -25,10 +26,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	j = 0;
 	k = 0;
-    //min(size, strlen(dst))
 	while (dst[j] && j < size)
 		j++;
-    //if(srtlen(dest) < size)
 	while ((src[k]) && ((j + k + 1) < size))
 	{
 		dst[j + k] = src[k];

@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 02:32:39 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/02 02:32:39 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:26:37 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_isascii(char c)
+int	ft_isascii(int c)
 {
-    return (c <= 0 || c <= 127);
+	return (c >= 0 && c <= 127);
 }

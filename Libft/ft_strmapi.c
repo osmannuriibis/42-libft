@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 00:01:34 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/06 00:01:34 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:56:30 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	i;
 
-	if (!s || !f || !(str = ft_strdup(s)))
+	
+	if (!s )
+		return (0);
+	str = ft_strdup(s);
+	if (!str)
 		return (0);
 	i = 0;
 	while (str[i])
@@ -26,3 +30,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	return (str);
+}

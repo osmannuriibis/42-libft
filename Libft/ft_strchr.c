@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 18:36:31 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/03 18:36:31 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:41:57 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
 ** LIBRARY: <string.h>
 ** SYNOPSIS: locate character in string (first occurrence)
@@ -22,18 +23,21 @@
 /* 
 *   Fonksiyonun 1. parametresi gönderilen yazının başlangıç adresi, 
 *   ikinci parametresi bir karakterin sıra numarasıdır. 
-*   Fonksiyon yazı içinde c karakterini arar ve ilk bulduğu c karakterinin adresiyle geri döner.
+*   Fonksiyon yazı içinde c karakterini arar ve ilk bulduğu c karakterinin 
+adresiyle geri döner.
 *   Eğer yazı içinde c karakteri yoksa fonksiyon NULL adresi ile geri döner. 
 */
 #include "libft.h"
 
 char	*ft_strchr(const char *ptr, int c)
 {
-	char *p;
-
-	p = ptr;
-	while (*p++)
-		if (*p == (char)c)
-			return (p);
+	while (*ptr)
+	{
+		if (*ptr == c)
+			return ((char *)ptr);
+		++ptr;
+	}
+	if (c == '\0')
+		return ((char *)ptr);
 	return (0);
 }

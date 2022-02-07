@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 00:10:29 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/06 00:10:29 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:43:34 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /* ‘f’ fonksiyonun stringin her karakterine uygular.
 Eğer gerekli olursa her karakter adresi ile
 gönderilmelidir

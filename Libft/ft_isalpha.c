@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 02:32:34 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/02 02:32:34 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:26:12 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
-    return ((c >= 97 && c <= 122) || (c >= 65 && c <= 90));
+	return ((c >= 97 && c <= 122) || (c >= 65 && c <= 90));
 }

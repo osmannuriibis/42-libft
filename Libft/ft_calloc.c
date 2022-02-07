@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 00:07:55 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/04 00:07:55 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:23:46 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
 ** LIBRARY: <stdlib.h>
 ** SYNOPSIS: memory allocation
@@ -19,6 +20,7 @@
 **	allocated memory. The allocated memory is filled with bytes of value
 **	zero.
 */
+
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
@@ -27,7 +29,8 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*dst;
 
 	tot_size = size * count;
-	if (!(dst = malloc(tot_size)))
+	dst = malloc(tot_size);
+	if (!dst)
 		return (0);
 	ft_memset(dst, 0, tot_size);
 	return (dst);

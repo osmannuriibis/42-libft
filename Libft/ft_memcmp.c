@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 01:07:28 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/07 01:07:28 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:36:43 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* memcmp işlevi belleğin s1 de başlayan boyut baytı ile s2 de başlayan boyut baytını karşılaştırır. 
-Dönen değer, ilk farklı bayt çiftleri arasındaki farkın işaretine bağlıdır 
-(önce unsigned char türünden nesneler olarak yorumlanır, sonra da int türüne terfi ettirilirler).
+
+/* memcmp işlevi belleğin s1 de başlayan boyut baytı ile s2 de başlayan boyut 
+baytını karşılaştırır. Dönen değer, ilk farklı bayt çiftleri arasındaki farkın 
+işaretine bağlıdır (önce unsigned char türünden nesneler olarak yorumlanır, 
+sonra da int türüne terfi ettirilirler).
 İki bloğun içeriği aynı ise memcmp sıfır ile döner. */
 #include "libft.h"
 

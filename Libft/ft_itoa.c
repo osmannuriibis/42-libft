@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 23:15:02 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/05 23:15:02 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:34:10 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,24 @@
 char	*ft_itoa(int n)
 {
 	char	*str;
-	long	nbr;
-	size_t	size;
 
-	nbr = n;
-	size = n > 0 ? 0 : 1;
-	nbr = nbr > 0 ? nbr : -nbr;
-	while (n)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	str = (char *)malloc(sizeof(char) * 2);
+	if (str == NULL)
+		return (NULL);
+	if (n < 0)
 	{
-		n /= 10;
-		size++;
+		str[0] = '-';
+		str[1] = '\0';
+		str = ft_strjoin(str, ft_itoa(-n));
 	}
-	if (!(str = (char *)malloc(size + 1)))
-		return (0);
-	*(str + size--) = '\0';
-	while (nbr > 0)
+	else if (n >= 10)
+		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
+	else if (n < 10 && n >= 0)
 	{
-		*(str + size--) = nbr % 10 + '0';
-		nbr /= 10;
+		str[0] = n + '0';
+		str[1] = '\0';
 	}
-	if (size == 0 && str[1] == '\0')
-		*(str + size) = '0';
-	else if (size == 0 && str[1] != '\0')
-		*(str + size) = '-';
 	return (str);
 }

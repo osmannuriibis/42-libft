@@ -6,7 +6,7 @@
 /*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 20:02:29 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/02 21:14:54 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 16:15:43 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t		i;
-	const char	*s;
-    
-	s = src;
-	i = 0;
-	while (*s && i < size - 1 && size != 0)
-	{
-		dest[i++] = *s++;
-	}
+	size_t	i;
 
+	i = 0;
 	if (size == 0)
 	{
-		return (ft_strlen(src));
+		while (src[i])
+			i++;
+		return (i);
 	}
-	else
+	while (i < size - 1 && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	if (i < size)
 		dest[i] = '\0';
-	return (s - src);
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }

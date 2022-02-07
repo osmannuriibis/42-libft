@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 03:02:36 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/04 03:02:36 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 18:41:27 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
 ** LIBRARY: N/A
 ** SYNOPSIS: split string, with specified character as delimiter, into an array
@@ -30,7 +31,7 @@ static int	count_words(const char *str, char c)
 	headofword = 1;
 	while (*str)
 	{
-		if (*str != c && headofword )
+		if (*str != c && headofword)
 		{
 			headofword = 0;
 			i++;
