@@ -6,7 +6,7 @@
 /*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 00:01:34 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/07 18:56:30 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/07 19:32:12 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	i;
 
-	
-	if (!s )
+	if (!s)
 		return (0);
 	str = ft_strdup(s);
 	if (!str)
