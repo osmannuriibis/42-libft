@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 18:36:31 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/09 14:38:15 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/10 19:16:51 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ adresiyle geri döner.
 *   Eğer yazı içinde c karakteri yoksa fonksiyon NULL adresi ile geri döner. 
 */
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
 char	*ft_strchr(const char *ptr, int c)
-{
+{	
+	c %= 256;
 	while (*ptr)
 	{
 		if (*ptr == c)

@@ -1,10 +1,10 @@
 NAME := libft.a
-CC := gcc
+CC := clang
 CFLAGS := -Wall -Wextra -Werror
 ARCHIVE := ar rcs
 REMOVE := rm -rf
 HEADER := libft.h
-LIBFTDIR :=/home/onibis/Masaüstü/projects/42Main/
+LIBFTDIR := /Users/oibis/main/
 
 SRCS := ft_memset.c		\
 		ft_bzero.c		\
@@ -82,9 +82,9 @@ $(BONUS_OBJS) : $(BONUS)
 
 re: fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
+#so:
+#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+#	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 
 
 tank:

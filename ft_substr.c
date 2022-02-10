@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 22:30:46 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/09 14:38:52 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/10 20:55:52 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,24 @@
 **	The substring begins at index ’start’ and is of maximum size ’len’.
 */
 #include "libft.h"
+#include <stdio.h> 
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
-	size_t	i;
-	size_t	j;
+	size_t	str_len;
 
-	str = (char *)malloc(len + 1);
-	if (!s || !str)
+	if (!s)
 		return (0);
-	i = start;
-	j = 0;
-	while (i < ft_strlen(s) && j < len)
-		str[j++] = s[i++];
-	str[j] = '\0';
+	str_len = ft_strlen((char *)s);
+	if (start > str_len)
+		return (ft_strdup(""));
+	if (str_len - start >= len)
+		str = (char *)malloc((len + 1) * sizeof(char));
+	else
+		str = (char *)malloc((str_len - start + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	ft_strlcpy(str, (s + start), (len + 1));
 	return (str);
 }

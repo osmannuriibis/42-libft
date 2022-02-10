@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oibis <oibis@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
+/*   By: oibis <oibis@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 18:49:14 by oibis             #+#    #+#             */
-/*   Updated: 2022/02/09 14:38:46 by oibis            ###   ########.fr       */
+/*   Updated: 2022/02/10 19:13:58 by oibis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_strrchr(char const *str, int c)
 {
 	char	*last;
 
+	c %= 256;
 	last = (0);
 	while (*str)
 	{
